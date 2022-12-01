@@ -29,15 +29,15 @@ The dataset can be downloaded from [here](https://www.kaggle.com/competitions/ji
 
 #### **RNN:**
 
-- A baseline was created using the RNN model. An **embedding layer of size 64** was used. Training the model with an **Adam optimizer with learning rate of 0.001** for **5 epochs** the model yielded an **Accuracy of 83.68% and an ROC-AUC Score of 55.72%.**
+- A baseline was created using the RNN model. An **embedding layer of size 64** was used. Training the model with an **Adam optimizer with learning rate of 0.001** for **5 epochs** yielded an **Accuracy of 83.68% and an ROC-AUC Score of 55.72%.**
 
 #### **BERT-Multilingual-base:**
 
-- The BERT-Multilingual-base was fine tuned on the data. A **hidden layer of 1024 neurons** was added to the model. An **embedding layer of size 64** was used. Training the model with an **Adam optimizer with learning rate of 0.001, weight decay of 1e-6** for **10 epochs** the model yielded an **Accuracy of 93.92% and an ROC-AUC Score of 89.55%.**
+- The BERT-Multilingual-base was fine tuned on the data. A **hidden layer of 1024 neurons** was added to the model. An **embedding layer of size 64** was used. Training the model with an **Adam optimizer with learning rate of 0.001, weight decay of 1e-6** for **10 epochs** yielded an **Accuracy of 93.92% and an ROC-AUC Score of 89.55%.**
 
 #### **XLM RoBERTa:**
 
-- The XLMRoberta model was fine tuned on the data. An **embedding layer of size 768** was used. Training the model with an **AdamW optimizer with learning rate of 1e-5, weight decay of 1e-5** for **7 epochs** the model yielded an **Accuracy of 96.24% and an ROC-AUC Score of 93.92%.**
+- The XLMRoberta model was fine tuned on the data. An **embedding layer of size 768** was used. Training the model with an **AdamW optimizer with learning rate of 1e-5, weight decay of 1e-5** for **7 epochs** yielded an **Accuracy of 96.24% and an ROC-AUC Score of 93.92%.**
 
 For all the models that were fine-tuned:
 
