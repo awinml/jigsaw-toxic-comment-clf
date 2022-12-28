@@ -33,7 +33,7 @@ The dataset can be downloaded from [here](https://www.kaggle.com/competitions/ji
 
 #### **BERT-Multilingual-base:**
 
-- The BERT-Multilingual-base was fine tuned on the data. A **hidden layer of 1024 neurons** was added to the model. An **embedding layer of size 64** was used. Training the model with an **Adam optimizer with learning rate of 0.001, weight decay of 1e-6** for **10 epochs** yielded an **Accuracy of 93.92% and an ROC-AUC Score of 89.55%.**
+- The BERT-Multilingual-base was fine tuned on the data. A **hidden layer of 1024 neurons** was added to the model. Training the model with an **Adam optimizer with learning rate of 0.001, weight decay of 1e-6** for **10 epochs** yielded an **Accuracy of 93.92% and an ROC-AUC Score of 89.55%.**
 
 #### **XLM RoBERTa:**
 
