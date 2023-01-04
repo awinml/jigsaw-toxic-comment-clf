@@ -1,8 +1,8 @@
-pandas
 numpy
-tensorflow
-tensorflow_addons
+pandas
 scikit-learn
 matplotlib
 seaborn
+tensorflow
+tensorflow_addons
 transformers
