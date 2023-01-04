@@ -8,7 +8,7 @@ train = pd.read_csv(
     "/kaggle/input/jigsaw-multilingual-toxic-comment-classification/jigsaw-toxic-comment-train.csv"
 )
 train.drop(
-    ["severe_toxic", "obscene", "threat", "insult", "identity_hate"],
+    [],
     axis=1,
     inplace=True,
 )
@@ -17,10 +17,10 @@ validation = pd.read_csv(
 )
 
 X_train = train["comment_text"]
-y_train = train["toxic"]
+y_train = train[["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]]
 
 X_test = validation["comment_text"]
-y_test = validation["toxic"]
+y_test = validation[["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]]
 
 
 def map_func(input_ids, masks, labels):
@@ -75,10 +75,6 @@ test_dataset = tf.data.Dataset.from_tensor_slices((X_test_ids, X_test_mask, y_te
 train_dataset = train_dataset.map(map_func)
 test_dataset = test_dataset.map(map_func)
 
-train_dataset = train_dataset.shuffle(100000).batch(32, drop_remainder=True)
-test_dataset = test_dataset.shuffle(100000).batch(32, drop_remainder=True)
-
-
 bert = transformers.TFAutoModel.from_pretrained(model_checkpoint)
 
 input_ids = tf.keras.layers.Input(shape=(seq_len,), name="input_ids", dtype="int32")
@@ -87,7 +83,7 @@ mask = tf.keras.layers.Input(shape=(seq_len,), name="attention_mask", dtype="int
 embeddings = bert.bert(input_ids, attention_mask=mask)[1]
 
 X = tf.keras.layers.Dense(1024, activation="relu")(embeddings)
-y = tf.keras.layers.Dense(1, activation="sigmoid", name="outputs")(X)
+y = tf.keras.layers.Dense(6, activation="sigmoid", name="outputs")(X)
 
 model = tf.keras.Model(inputs=[input_ids, mask], outputs=y)
 
