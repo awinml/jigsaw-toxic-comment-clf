@@ -37,11 +37,10 @@ The dataset can be downloaded from [here](https://www.kaggle.com/competitions/ji
 
 #### **XLM RoBERTa:**
 
-- The XLMRoberta model was fine tuned on the data. An **embedding layer of size 768** was used. Training the model with an **AdamW optimizer with learning rate of 1e-5, weight decay of 1e-5** for **7 epochs** yielded an **Accuracy of 96.24% and an ROC-AUC Score of 93.92%.**
+- The XLMRoberta model was fine tuned on the data. Training the model with an **AdamW optimizer with learning rate of 1e-5, weight decay of 1e-5** for **7 epochs** yielded an **Accuracy of 96.24% and an ROC-AUC Score of 93.92%.**
 
 For all the models that were fine-tuned:
 
-- Maximum input sequence length was 512.
 - Batch size of 64 was used for training.
 - Binary Cross-Entropy was used as the loss function.
 
