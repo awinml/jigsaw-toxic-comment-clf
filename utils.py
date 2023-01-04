@@ -320,7 +320,7 @@ def build_classifier(transformer_name: str, max_len: int, lr: float) -> tf.keras
     kernel_init = tf.keras.initializers.GlorotNormal(seed=generate_random_seed())
     bias_init = tf.keras.initializers.Constant(value=0.0)
     cls_layer = tf.keras.layers.Dense(
-        units=1,
+        units=6,
         activation="sigmoid",
         kernel_initializer=kernel_init,
         bias_initializer=bias_init,
