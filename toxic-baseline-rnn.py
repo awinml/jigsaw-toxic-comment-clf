@@ -11,20 +11,16 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 train = pd.read_csv(
     "/kaggle/input/jigsaw-multilingual-toxic-comment-classification/jigsaw-toxic-comment-train.csv"
 )
-train.drop(
-    ["severe_toxic", "obscene", "threat", "insult", "identity_hate"],
-    axis=1,
-    inplace=True,
-)
+
 validation = pd.read_csv(
     "/kaggle/input/jigsaw-multilingual-toxic-comment-classification/validation.csv"
 )
 
 X_train = train["comment_text"]
-y_train = train["toxic"]
+y_test = train[["severe_toxic", "obscene", "threat", "insult", "identity_hate", "toxic"]]
 
 X_test = validation["comment_text"]
-y_test = validation["toxic"]
+y_test = validation[["severe_toxic", "obscene", "threat", "insult", "identity_hate", "toxic"]]
 
 # Tokenize text
 
@@ -45,8 +41,8 @@ embed_size = 64
 # A simpleRNN without any pretrained embeddings and one dense layer
 model = Sequential()
 model.add(Embedding(max_features, embed_size, input_length=maxlen))
-model.add(SimpleRNN(2))
-model.add(Dense(1, activation="sigmoid"))
+model.add(SimpleRNN(8))
+model.add(Dense(6, activation="sigmoid"))
 model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
 
 
