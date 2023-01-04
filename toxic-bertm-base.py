@@ -7,11 +7,7 @@ import tensorflow as tf
 train = pd.read_csv(
     "/kaggle/input/jigsaw-multilingual-toxic-comment-classification/jigsaw-toxic-comment-train.csv"
 )
-train.drop(
-    [],
-    axis=1,
-    inplace=True,
-)
+
 validation = pd.read_csv(
     "/kaggle/input/jigsaw-multilingual-toxic-comment-classification/validation.csv"
 )
