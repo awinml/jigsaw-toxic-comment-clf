@@ -52,7 +52,7 @@ The results from all the models have been summarized below:
 
 |                  **Model**                  | **Accuracy** | **ROC\-AUC Score** |
 | :-----------------------------------------: | :----------: | :----------------: |
-|                   **RNN**                   |    83.68     |       88.72        |
+|                   **RNN**                   |    83.68     |       55.72        |
 | **BERT-Multilingual-base** _\(fine-tuned\)_ |    93.92     |       89.55        |
 |      **XLM RoBERTa** _\(fine-tuned\)_       |  **96.24**   |     **93.92**      |
 
