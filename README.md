@@ -1,5 +1,10 @@
 # Jigsaw - Multilingual Toxic Comment Classification
 
+<div align='center'>
+   <img src="jigsaw_clf_cover.jpg"  width="500" height="300">
+<br/>
+</div>
+
 - Built a **multilingual text classification model** to predict the probability that a comment is toxic using the data provided by Google Jigsaw.
 
 - The data had **4,35,775** text comments in **7 different languages**.
